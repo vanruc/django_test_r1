@@ -27,12 +27,12 @@ After install and configure app, we need go to creat clientapp for each Store.
 1. login to the application
 - Access to the link: http://127.0.0.1:8000/admin
 - Enter user and password
-![](D:\MyProjects\DjangoTestR1\django_test_r1\doc_assets\images\login.png)
+![](/doc_assets/images/login.png)
 
 2. Create application
 - Click to the **add** button **Applications** on the group **Django Oauth Toolkit**
 - Enter information to create Application for client - **Kafa**
-![](D:\MyProjects\DjangoTestR1\django_test_r1\doc_assets\images\add_application.png)
+![](/doc_assets/images/add_application.png)
 - Client application was added, we will use Client id and Client secret to get Access token key for client application to consume our API. 
 3. We can send request to get access token key like below:
 > curl -X POST -d "grant_type=password&username=<user_name>&password=<password>" -u"<client_id>:<client_secret>" http://localhost:8000/o/token/
@@ -48,7 +48,7 @@ The result returned will be something like this:
 4. Consume API - Leads Subscribed
 Once done, we can use the api for leads to subscribe.
 Send request to API like below:
-![](D:\MyProjects\DjangoTestR1\django_test_r1\doc_assets\images\consume.png)
+![](/doc_assets/images/consume.png)
 
 When API was called, it will check the Access Token key was assigned to which application, and we can get User to determine Store accordingly.
 
@@ -57,9 +57,9 @@ When API was called, it will check the Access Token key was assigned to which ap
 #### Schedule task
 
 1. setup crontab to run on 0th minute of each Monday and Wednesday
-![](D:\MyProjects\DjangoTestR1\django_test_r1\doc_assets\images\crontabs.png)
+![](/doc_assets/images/crontabs.png)
 2. apply crontab to the task
-![](D:\MyProjects\DjangoTestR1\django_test_r1\doc_assets\images\schedule task.png)
+![](/doc_assets/images/schedule task.png)
 We will use rabbitMQ and Celery to demo simple automation task.
 
 #### Install rabbitMQ on windows using docker
@@ -71,5 +71,5 @@ celery -A unity beat -l INFO  --scheduler django_celery_beat.schedulers:Database
 
 ### Run celery worker
 > celery -A tutorial worker -l INFO -P solo
-![](D:\MyProjects\DjangoTestR1\django_test_r1\doc_assets\images\celery_worker_console.png)
+![](/doc_assets/images/celery_worker_console.png)
 
