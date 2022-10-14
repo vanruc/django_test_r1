@@ -45,7 +45,7 @@ class LeadsSubscribe(APIView):
                 data={
                     'msg': 'You already subscribed to this store before, no action needed'
                 },
-                status= status.HTTP_200_OK
+                status=status.HTTP_200_OK
             )
         else:
             # create leads and store to the database
